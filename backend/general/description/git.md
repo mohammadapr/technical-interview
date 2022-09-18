@@ -1,14 +1,10 @@
 # Git
 
 ## HEAD
+به ما نشان میدهد در کجا قرار داریم
 
-``` bash
-git commit -m "initail"
-```
 ## Remote
 دستور git remote امکان ایجاد، مشاهده و حذف ارتباط با مخزن های دیگر را به شما می دهد. اتصال های از راه دور بیشتر شبیه نشانه گذاری (bookmark) ها هستند تا لینک مستقیم به مخزن های دیگر. آن ها به جای دسترسی سریع (real-time)به مخزن دیگر، به عنوان نام های مناسبی هستند که می توانند برای آدرس (URL) های نه چندان خوانا باشند.  
-
-برای مثال، نمودار زیر دو اتصال از راه دور از مخزن شما به مخزن مرکزی و مخزن توسعه دهنده دیگری را نشان می دهد. به جای ارجاع به آدرس های کامل آن ها، می توانید میانبرهای (shortcuts) مخزن اصلی و مخزن علی را در سایر دستورهای Git جایگزین کنید. 
 
 دستور زیر لیست اتصال های از راه دور را فهرست می کند. 
 ``` bash
@@ -34,6 +30,23 @@ git remote rename <old-name> <new-name>
 
 
 ## Merge
+دستور git merge چندین commit را به یک تاریخچه ی واحد متصل می کند.
+<br>
+مثال:
+```bash
+# Start a new feature
+git checkout -b new-feature main
+# Edit some files
+git add <file>
+git commit -m "Start a feature"
+# Edit some files
+git add <file>
+git commit -m "Finish a feature"
+# Merge in the new-feature branch
+git checkout main
+git merge new-feature
+git branch -d new-feature
+```
 ## Rebase
 ``` bash
 git rebase -m "initail"
